@@ -19,40 +19,35 @@ class EmployeeAllowanceDeduction_model extends CI_Model
         return $this->db->get()->result_array();
     }
 
+
     // public function get_allowances()
     // {
-    //     $this->db->where('type', 'allowance');
+    //     $this->db->select('id, name');
+    //     $this->db->from('allowance_deduction');
+    //     $query = $this->db->get();
+    //     return $query->result();
+    // }
+
+
+
+    // public function get_deductions()
+    // {
+    //     $this->db->where('type', 'deduction');
     //     return $this->db->get('allowance_deduction_master')->result();
     // }
 
-    public function get_allowances()
-    {
-        $this->db->select('id, name');
-        $this->db->from('allowance_deduction');
-        $query = $this->db->get();
-        return $query->result();
-    }
-
-
-
-    public function get_deductions()
-    {
-        $this->db->where('type', 'deduction');
-        return $this->db->get('allowance_deduction_master')->result();
-    }
-
-    public function add_allowance($employee_id, $master_id, $amount)
+    public function add_allowance($employee_id, $master_id, $amount, $type)
     {
         $data = array(
             'employee_id' => $employee_id,
             'master_id' => $master_id,
             'amount' => $amount,
-            'type' => 'allowance'
+            'type' => $type
         );
         return $this->db->insert('employee_allowance_deduction', $data);
     }
 
-    public function add_deduction($employee_id, $master_id, $amount)
+    public function add_deduction($employee_id, $master_id, $amount, $type)
     {
         $data = array(
             'employee_id' => $employee_id,

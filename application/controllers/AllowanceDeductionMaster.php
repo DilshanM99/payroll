@@ -14,6 +14,10 @@ class AllowanceDeductionMaster extends CI_Controller
     // List all allowance and deduction types
     public function index()
     {
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
+
         $data['allowance_deductions'] = $this->AllowanceDeductionMaster_model->get_all();
         $this->load->view('templates/header');
         $this->load->view('allowance_deduction_master/index', $data);
@@ -23,6 +27,9 @@ class AllowanceDeductionMaster extends CI_Controller
     // Create a new allowance or deduction
     public function create()
     {
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
         $this->load->view('templates/header');
         $this->load->view('allowance_deduction_master/create');
         $this->load->view('templates/footer');
@@ -43,6 +50,9 @@ class AllowanceDeductionMaster extends CI_Controller
     // Edit an existing allowance or deduction
     public function edit($id)
     {
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
         $data['allowance_deduction'] = $this->AllowanceDeductionMaster_model->get_by_id($id);
         $this->load->view('templates/header');
         $this->load->view('allowance_deduction_master/edit', $data);
@@ -62,12 +72,6 @@ class AllowanceDeductionMaster extends CI_Controller
         redirect('allowance_deduction_master');
     }
 
-    // Soft delete the allowance or deduction
-    // public function delete($id)
-    // {
-    //     $this->AllowanceDeductionMaster_model->delete($id);
-    //     redirect('employee');
-    // }
 
     // Delete an allowance or deduction
     public function delete($id)

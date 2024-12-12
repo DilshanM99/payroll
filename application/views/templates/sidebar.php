@@ -6,12 +6,6 @@
         </div>
         <ul class="sidebar-nav">
             <li class="nav-item">
-                <a href="<?php echo site_url('dashboard'); ?>"
-                    class="nav-link <?php echo $this->uri->segment(1) == 'dashboard' ? 'active' : ''; ?>">
-                    <i class="fas fa-tachometer-alt"></i> Dashboard
-                </a>
-            </li>
-            <li class="nav-item">
                 <a href="<?php echo site_url('user'); ?>"
                     class="nav-link <?php echo $this->uri->segment(1) == 'user' ? 'active' : ''; ?>">
                     <i class="fas fa-users"></i> Users
@@ -38,7 +32,13 @@
             <li class="nav-item">
                 <a href="<?php echo site_url('paysheet'); ?>"
                     class="nav-link <?php echo $this->uri->segment(1) == 'paysheet' ? 'active' : ''; ?>">
-                    <i class="fas fa-money-check-alt"></i> paysheets
+                    <i class="fas fa-file-invoice"></i></i> Paysheets
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="<?php echo site_url('payroll_processing'); ?>"
+                    class="nav-link <?php echo $this->uri->segment(1) == 'payroll_processing' ? 'active' : ''; ?>">
+                    <i class="fas fa-calculator"></i> Payroll Processing
                 </a>
             </li>
             <li class="nav-item">

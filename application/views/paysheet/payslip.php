@@ -15,7 +15,7 @@
                         <td><?php echo $payslip['basic_salary']; ?></td>
                     </tr>
                     <tr>
-                        <th>Allowance</th>
+                        <th>Allowances & Deductions</th>
                         <td><?php echo $payslip['allowance']; ?></td>
                     </tr>
                     <tr>
@@ -27,13 +27,14 @@
                         <td><?php echo $payslip['gross_salary']; ?></td>
                     </tr>
                     <tr>
-                        <th>Net Salary</th>
-                        <td><?php echo $payslip['net_salary']; ?></td>
+                        <th><strong>Net Salary</strong></th>
+                        <td style="color: green; font-weight: bold;"><?php echo $payslip['net_salary']; ?></td>
                     </tr>
+
                 </table>
         </div>
     </div>
-    
+
     <div class="container text-right mt-4">
         <button id="downloadBtn" class="btn btn-primary" onclick="downloadPDF()">Download Pay Slip</button>
     </div>

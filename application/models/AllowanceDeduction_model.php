@@ -26,11 +26,12 @@ class AllowanceDeduction_model extends CI_Model {
         $this->db->insert('employee_allowance_deduction', $data);
     }
 
-    public function add_deduction($employee_id, $master_id, $amount) {
+    public function add_deduction($employee_id, $master_id, $amount, $type) {
         $data = array(
             'employee_id' => $employee_id,
-            'deduction_id' => $master_id,
-            'amount' => $amount
+            'master_id' => $master_id,
+            'amount' => $amount,
+            'type' => 'deduction'
         );
         $this->db->insert('employee_allowance_deduction', $data);
     }

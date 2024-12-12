@@ -16,20 +16,26 @@ class EmployeeAllowanceDeduction extends CI_Controller
 
     public function index()
     {
+
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
+
         $data['employee_allowance_deductions'] = $this->EmployeeAllowanceDeduction_model->get_all();
         $this->load->view('templates/header');
         $this->load->view('allowance_deduction/index', $data);
         $this->load->view('templates/footer');
     }
 
-    public function getad()
-    {
-        $data['allowance_deductions'] = $this->EmployeeAllowanceDeduction_model->get_allowance_deductions();
-        $this->load->view('allowance_deduction/index', $data);
-    }
+   
 
     public function add_allowance($employee_id)
     {
+
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
+
         $allowances = $this->AllowanceDeduction_model->get_allowances();
         $data = array(
             'allowances' => $allowances,
@@ -42,6 +48,11 @@ class EmployeeAllowanceDeduction extends CI_Controller
 
     public function add_deduction($employee_id)
     {
+
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
+
         $deductions = $this->AllowanceDeduction_model->get_deductions();
         $data = array(
             'deductions' => $deductions,
@@ -66,12 +77,17 @@ class EmployeeAllowanceDeduction extends CI_Controller
         $employee_id = $this->input->post('employee_id');
         $master_id = $this->input->post('deduction_id');
         $amount = $this->input->post('amount');
-        $this->AllowanceDeduction_model->add_deduction($employee_id, $master_id, $amount);
+        $type = $this->input->post('type');
+        $this->AllowanceDeduction_model->add_deduction($employee_id, $master_id, $amount, $type);
         redirect('employee');
     }
 
     public function edit($id)
     {
+
+        if (!$this->session->userdata('logged_in')) {
+            redirect('user/login');
+        }
         $data['allowance_deduction'] = $this->EmployeeAllowanceDeduction_model->get_allowance_deduction($id);
         $employee = $this->Employee_model->get_employee($data['allowance_deduction']->employee_id);
         $data['employee_name'] = $employee ? $employee->name : 'Employee not found';

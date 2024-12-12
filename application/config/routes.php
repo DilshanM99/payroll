@@ -96,6 +96,11 @@ $route['paysheet/generate'] = 'Paysheet/generate'; // Generate paysheet
 $route['payslip/(:num)'] = 'Paysheet/payslip/$1'; // View pay slip for an employee
 
 
+$route['payroll_processing'] = 'PayrollProcessing/payrollProcessing';
+$route['payroll_processing/create'] = 'PayrollProcessing/create';
+$route['payroll_processing/save'] = 'PayrollProcessingController/save';
+$route['payroll_processing/process/(:num)'] = 'PayrollProcessing/process/$1';
+
 // $route['test'] = 'test';
 
 

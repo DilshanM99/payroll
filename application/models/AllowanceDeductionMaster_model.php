@@ -13,13 +13,6 @@ class AllowanceDeductionMaster_model extends CI_Model
         return $query->row_array(); // Returns a single record as an associative array
     }
 
-    // Fetch all allowance and deduction types
-    // public function get_all() {
-    //     $this->db->from('allowance_deduction_master');
-    //     $this->db->where('status', 'active');
-    //     $query = $this->db->get();
-    //     return $query->result_array();
-    // }
 
     public function get_all($status = null)
     {

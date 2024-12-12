@@ -13,8 +13,9 @@
                     <th>Employee ID</th>
                     <th>Name</th>
                     <th>Status</th>
+                    <th>Basic Salary</th>
                     <th>Actions</th>
-                    <th>Allowances & Deductions</th>
+                    <!-- <th>Allowances & Deductions</th> -->
                     <th>Manage Allowances</th>
                 </tr>
             </thead>
@@ -31,6 +32,7 @@
 
 
                         </td>
+                        <td><?php echo $employee['basic_salary']; ?></td>
                         <td>
                             <div class="actions">
                                 <a href="<?php echo site_url('employee/edit/' . $employee['id']); ?>" class="btn-action">
@@ -42,8 +44,8 @@
                             </div>
                         </td>
 
-                        <td>
-                            <!-- Display allowances and deductions for the employee -->
+                        <!-- Display allowances and deductions for the employee -->
+                        <!-- <td>    
                             <?php if (!empty($employee->allowances) || !empty($employee->deductions)) { ?>
                                 <ul>
                                     <?php if (!empty($employee->allowances)) { ?>
@@ -69,7 +71,7 @@
                             <?php } else { ?>
                                 <p>No allowances or deductions assigned</p>
                             <?php } ?>
-                        </td>
+                        </td> -->
 
                         <td>
                             <div class="actions">

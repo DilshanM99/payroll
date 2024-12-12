@@ -21,6 +21,10 @@
         <option value="deactivated" <?php echo $employee['status'] == 'deactivated' ? 'selected' : ''; ?>>Deactivated</option>
     </select>
 </div>
+<div class="form-group">
+    <label for="basic_salary">Basic Salary</label>
+    <input type="text" name="basic_salary" class="form-control" value="<?php echo $employee['basic_salary']; ?>" required>
+</div>
 <button type="submit" class="btn btn-primary">Submit</button>
 <?php echo form_close(); ?>
 </div>
