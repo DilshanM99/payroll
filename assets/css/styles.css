@@ -1,0 +1,218 @@
+    /* General Layout */
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 20px;
+    }
+
+
+
+    /* Header Section */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #003d86;
+    }
+
+    .btn-add {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        background-color: #c5281c;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        text-decoration: none;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .btn-add:hover {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #e63939;
+        transform: scale(1.05);
+    }
+
+    .btn-add i {
+        margin-right: 10px;
+    }
+
+    /* Sidebar Styles */
+    .sidebar {
+        width: 300px;
+        height: 100vh;
+        background-color: #003d86;
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 20px;
+        z-index: 999;
+        border-bottom-right-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .sidebar .sidebar-header {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #fff;
+    }
+
+    .sidebar-nav {
+        list-style-type: none;
+        padding: 15px;
+    }
+
+    .sidebar-nav .nav-item {
+        margin: 15px 0;
+    }
+
+    .sidebar-nav .nav-link {
+        color: white;
+        font-size: 16px;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+    }
+
+    .sidebar-nav .nav-link:hover {
+        color: #ffffff;
+        background-color: #c5281c;
+        border-radius: 5px;
+    }
+
+    .nav-link.active {
+        background-color: #003d86;
+        color: #c5281c;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+
+    .sidebar-nav .nav-link i {
+        margin-right: 10px;
+    }
+
+    /* Main content styles */
+    .main-content {
+        margin-left: 250px;
+        /* Adjust for sidebar width */
+        padding: 20px;
+    }
+
+    /* Remove sidebar from login view */
+    body.login-page .sidebar {
+        display: none;
+    }
+
+    body.login-page .main-content {
+        margin-left: 0;
+        /* Full width for login page */
+    }
+
+
+    /* Table Section */
+    .table-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    thead {
+        background-color: #003d86;
+        color: white;
+    }
+
+    th,
+    td {
+        text-align: left;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    th {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #e9ecef;
+        transition: background-color 0.3s ease;
+    }
+
+    tbody tr:hover {
+        background-color: #f8f9fa;
+    }
+
+    /* Status Badges */
+    .badge {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .badge.active {
+        background-color: #28a745;
+        color: white;
+    }
+
+    .badge.inactive,
+    .badge.deactivate {
+        background-color: #6c757d;
+        color: white;
+    }
+
+    .badge.pending {
+        background-color: #ffc107;
+        color: white;
+    }
+
+    /* Actions Section */
+    .actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .btn-action {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30px;
+        height: 30px;
+        background-color: #f8f9fa;
+        border-radius: 50%;
+        color: #495057;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-action:hover {
+        background-color: #e9ecef;
+        transform: scale(1.1);
+        text-decoration: none !important;
+    }
